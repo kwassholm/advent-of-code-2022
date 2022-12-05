@@ -1,9 +1,9 @@
 defmodule Day3 do
-  def prepare_data() do
+  defp prepare_data() do
     AoC.read_input("day_3.txt")
   end
 
-  def priorities() do
+  defp priorities() do
     Map.new(
       Enum.zip(
         String.split("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", "", trim: true),
@@ -12,7 +12,7 @@ defmodule Day3 do
     )
   end
 
-  def split(x) do
+  defp split(x) do
     String.split(x, "", trim: true)
   end
 
@@ -46,6 +46,6 @@ defmodule Day3 do
 
       sum + Map.get(priorities(), l)
     end)
-    |> IO.inspect()
+    |> AoC.print_answer()
   end
 end
