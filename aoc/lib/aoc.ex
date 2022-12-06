@@ -4,6 +4,10 @@ defmodule AoC do
     |> Enum.map(&String.trim(&1))
   end
 
+  def read_raw_input(filename) do
+    File.stream!("#{:code.priv_dir(:aoc)}/input/#{filename}")
+  end
+
   def read_input_as_ints(filename) do
     read_input(filename)
     |> Enum.map(fn
